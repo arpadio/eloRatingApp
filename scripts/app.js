@@ -96,8 +96,8 @@ $(document).ready(function() {
       var s2 = 0;
 
       // Introduce the constant
-      // We use 40 because the Fédération Internationale des Échecs does for newbies
-      var k = 40
+      // We use 10 because the Fédération Internationale des Échecs does for anyone over 2400
+      var k = 10
 
       // Calculate new rankings
       var p1n = p1r + k * (s1 - e1);

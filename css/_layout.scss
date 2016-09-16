@@ -1,0 +1,22 @@
+// main: main.scss
+
+.row {
+  clear: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.column {
+  padding: 1rem;
+}
+.wrapper {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+#newResultView {
+  display: none;
+}

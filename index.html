@@ -9,14 +9,18 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./css/main.min.css">
 
-    <title>Arpadio: The Elo Rating App</title>
+    <title>Arpadio - The Elo Rating App</title>
+
   </head>
 
   <body>
 
     <header>
       <div class="wrapper">
-        <a href="/"><h1>Arpadio</h1></a>
+        <div class="row space-between">
+          <a href="./"><h1>Arpadio</h1></a>
+          <button class="btn" id="resetButton">Reset</button>
+        </div>
       </div>
     </header>
 
@@ -26,48 +30,56 @@
         <div id="rankingView">
           <div class="row space-between" />
             <h2>Current Ranking</h2>
-            <a class="btn btn-success" id="newResultButton" href="#newresult">New Result</a>
+            <div>
+              <button class="btn newPlayerButton">Add Player</button>
+              <button class="btn btn-success" id="newResultButton">New Result</button>
+            </div>
           </div>
-          <hr />
-          <table>
+          <table id="rankingTable">
             <thead>
               <tr>
                 <th>Ranking</th>
                 <th>Name</th>
                 <th>Nationality</th>
+                <th>Won</th>
+                <th>Lost</th>
                 <th>Rating</th>
               </tr>
             </thead>
-            <tbody id="rankingTable">
+            <tbody>
               <!-- Ranking will magically appear here! -->
             </tbody>
           </table>
 
-          <h3>Results</h3>
-
-          <hr />
-
-          <ul id="resultsHistory">
-            <li id="emptyState"><em>Go ahead and play around. Results will magically appear here!</em></li>
-            <!-- History will magically appear here! -->
-          </ul>
+          <div class="row space-between">
+            <h3>Results</h3>
+            <p id="totalGames"></p>
+          </div>
+          <table id="resultsHistory">
+            <tbody>
+              <!-- Ranking will magically appear here! -->
+            </tbody>
+          </table>
 
         </div>
 
         <div id="newResultView">
           <div class="row space-between" />
             <h2>Submit a New Result</h2>
-            <a class="btn btn-error" id="cancelButton" href="#ranking">Cancel</a>
+            <div>
+              <button class="btn newPlayerButton">Add Player</button>
+              <button class="btn btn-error cancelButton">Cancel</button>
+            </div>
           </div>
 
           <hr />
 
           <h3>Who played who?</h3>
 
-          <div class="row">
+          <div class="row" id="selects">
             <div class="column text-center">
               <p>The humble winner:</p>
-              <select id="playerOne">
+              <select class="resultSelect" id="playerOne">
                 <option value="none"></option>
                 <!-- PLayers will magically appear here! -->
               </select>
@@ -77,7 +89,7 @@
             </div>
             <div class="column text-center">
               <p>The gallant loser:</p>
-              <select id="playerTwo">
+              <select class="resultSelect" id="playerTwo">
                 <option value="none"></option>
                 <!-- Players will magically appear here! -->
               </select>
@@ -90,13 +102,50 @@
 
         </div>
 
+        <div id="newPlayerView">
+          <div class="row space-between" />
+            <h2>Add a New Player</h2>
+            <button class="btn btn-error cancelButton">Cancel</button>
+          </div>
+          <hr />
+          <h3>Who would you like to add?</h3>
+
+          <div class="row flex-start inputRow">
+            <div class="column">
+              <label for="npName">Name:</label>
+            </div>
+            <div class="column">
+              <input type="text" id="npName" />
+            </div>
+          </div>
+
+          <div class="row flex-start inputRow">
+            <div class="column">
+              <label for="npNationality">Nationality:</label>
+            </div>
+            <div class="column">
+              <input type="text" id="npNationality"/>
+            </div>
+          </div>
+
+          <div class="row flex-start inputRow">
+            <div class="column">
+            </div>
+            <div class="column">
+              <button class="btn btn-success" id="addPlayer">Add Player</button>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
     <footer>
       <div class="wrapper">
         <hr />
-        <p>By <a href="http://mead.fm" target="_blank">Sam Mead</a>, with thanks to <a href="https://metinmediamath.wordpress.com/about/" target="_blank">Metin Bektas</a></p>
+        <p>By <a href="http://mead.fm" target="_blank">Sam Mead</a>, with thanks to <a href="https://metinmediamath.wordpress.com/" target="_blank">Metin Bektas</a></p>
+        <p><a href="https://github.com/arpadio/eloRatingApp" target="_blank">About Arpadio &mdash; The Elo Rating App</a></p>
         <p>"The process of rating players can be compared to the measurement of the position of a cork bobbing up and down on the surface of agitated water with a yard stick tied to a rope and which is swaying in the wind."</p>
         <p><em>&mdash; Arpad Elo</em></p>
       </div>
@@ -105,6 +154,7 @@
   </body>
 
   <script src="./scripts/jquery-2.2.4.min.js" ></script>
+  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
   <script src="./scripts/app.js" ></script>
 
 </html>

@@ -17,13 +17,15 @@ $error:       #e25835;  // Flame pea
 
 // Global styles
 $base-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$base-font-weight: 300px;
+$base-font-weight: 300;
 
 @import
+  "_allResets",
   "_alpha",
   "_global",
   "_header",
   "_layout",
   "_footer",
-  "_shame"
+  "_shame",
+  "_tables"
   ;

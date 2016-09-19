@@ -30,7 +30,15 @@
 .text-center {
   text-align: center;
 }
-#resultsHistory {
-  list-style-type: none;
-  padding: 0;
+.helpText {
+  color: $error;
+  font-style: italic;
+  margin: 0;
+  font-size: 0.9rem;
+}
+@media screen and (max-width: 376px) {
+  .btn {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
 }

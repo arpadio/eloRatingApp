@@ -1,0 +1,73 @@
+{
+  "players" : {
+    "-KS-rF1ErsAvHs0nbvIx" : {
+      "lost" : 1,
+      "name" : "Magnus Carlsen",
+      "nationality" : "Norwegian",
+      "played" : 2,
+      "rating" : 2882,
+      "won" : 1
+    },
+    "-KS-rJF2LheZCUq53kVj" : {
+      "lost" : 1,
+      "name" : "Garry Kasparov",
+      "nationality" : "Russian",
+      "played" : 2,
+      "rating" : 2851,
+      "won" : 1
+    },
+    "-KS-rMbFlKvzFXMG9f00" : {
+      "lost" : 0,
+      "name" : "Viswanathan Anand",
+      "nationality" : "Indian",
+      "played" : 1,
+      "rating" : 2817,
+      "won" : 1
+    },
+    "-KS-rR_2PdrGaWbwUNmz" : {
+      "lost" : 0,
+      "name" : "Veselin Topalov",
+      "nationality" : "Bulgarian",
+      "played" : 1,
+      "rating" : 2816,
+      "won" : 1
+    },
+    "-KS-rVpX_onSLHxhkHPw" : {
+      "lost" : 1,
+      "name" : "Vladimir Kramnik",
+      "nationality" : "Russian",
+      "played" : 2,
+      "rating" : 2812,
+      "won" : 1
+    },
+    "-KS-ra-2em7fO5xQ104a" : {
+      "lost" : 2,
+      "name" : "Bobby Fischer",
+      "nationality" : "American",
+      "played" : 2,
+      "rating" : 2785,
+      "won" : 0
+    }
+  },
+  "results" : [ {
+    "date" : "Thu Sep 08 2016",
+    "loser" : "Bobby Fischer",
+    "winner" : "Magnus Carlsen"
+  }, {
+    "date" : "Fri Sep 09 2016",
+    "loser" : "Magnus Carlsen",
+    "winner" : "Viswanathan Anand"
+  }, {
+    "date" : "Sun Sep 11 2016",
+    "loser" : "Garry Kasparov",
+    "winner" : "Veselin Topalov"
+  }, {
+    "date" : "Sun Sep 11 2016",
+    "loser" : "Vladimir Kramnik",
+    "winner" : "Garry Kasparov"
+  }, {
+    "date" : "Mon Sep 12 2016",
+    "loser" : "Bobby Fischer",
+    "winner" : "Vladimir Kramnik"
+  } ]
+}

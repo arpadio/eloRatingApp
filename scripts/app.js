@@ -137,7 +137,8 @@ $(document).ready(function() {
       var s2 = 0;
 
       // Introduce the constant
-      // We use 10 because the Fédération Internationale des Échecs does for pros like this
+
+      // We use 10 because the Fédération Internationale des Échecs does for anyone over 2400. Pro!
       var k = 10
 
       // Calculate new rankings

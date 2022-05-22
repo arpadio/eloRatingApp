@@ -1,0 +1,128 @@
+// main: ../main.scss
+
+.container {
+  max-width: $column-width;
+  margin: 0px auto;
+  padding: 0 1rem;
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @include for-tablet-portrait-up {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  };
+
+  .flex-half {
+    flex: 0 0 100%;
+
+    @include for-tablet-portrait-up {
+      flex: 1 1 34%;
+      max-width: 50%;
+    };
+  }
+}
+
+.view-header {
+  @extend .flexbox;
+  padding: 1rem 0;
+
+  .flex-half:last-child {
+    @include for-tablet-portrait-up {
+      text-align: right;
+    };
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.card {
+  background: $card-bg-color;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-bottom: $spacing-unit;
+}
+
+.input-group {
+  @extend .flexbox;
+  margin-bottom: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-error {
+  color: transparent;
+  transition: 0.5s ease;
+}
+
+.form-error-active {
+  color: $warning-color
+}
+
+.btn {
+  color: $text-color;
+  background: $emphasis-bg;
+  border: 1px solid $emphasis-bg;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: 0.5s ease;
+
+  &:hover {
+    color: scale-color($text-color, $lightness: -10%);
+    border-color: $alt-text-color;
+  }
+}
+
+.small-btn {
+  font-size: 0.875rem;
+  padding: 0.4375rem 0.875rem;
+}
+
+.spaced-btn {
+  margin-left: 1rem;
+}
+
+.submit-btn {
+  margin-bottom: 1rem;
+  color: $success-color;
+  background-color: transparent;
+  border-color: $success-color;
+
+  @include for-tablet-portrait-up {
+    margin-left: 11rem;
+  };
+
+  &:hover {
+    color: $success-color;
+    background-color: #323e3a ;
+    border-color: $success-color;
+  }
+}
+
+.cancel-btn {
+  color: $warning-color;
+  background-color: transparent;
+  border-color: $warning-color;
+
+  &:hover {
+    color: $warning-color;
+    background-color: #2e1e1e;
+    border-color: $warning-color;
+  }
+}
+
+.alt-text {
+  color: $alt-text-color;
+}
+
+.no-margin {
+  margin: 0;
+}

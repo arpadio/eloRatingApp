@@ -1,0 +1,111 @@
+// main: ../main.scss
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, li, figure, span, a {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+  position: relative;
+  min-height: 100%;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  margin: 0;
+  scroll-behavior: smooth;
+  background: $background-color;
+  color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: $alt-text-color;
+}
+
+p {
+  line-height: $base-line-height;
+  margin: 0 0 1rem;
+}
+
+a {
+  transition: 0.5s ease;
+  text-decoration: underline;
+  color: $link-color;
+
+  &:hover {
+    text-decoration: underline;
+    color: scale-color($link-color, $lightness: -20%);
+  }
+}
+
+hr {
+  margin: 0 0 1rem;
+}
+
+input, textarea, select, button {
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  font-size:   $base-font-size;
+}
+
+button, input[button] {
+  border: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+label {
+  display: inline-block;
+  min-width: 10rem;
+  color: $alt-text-color;
+}
+
+input, select {
+  color: $text-color;
+  background: #1d1c27;
+  border-radius: 5px;
+  line-height: 1.6rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid $emphasis-bg;
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid $alt-text-color;
+  }
+}
+
+table {
+  font-size: 0.867rem;
+  width: 100%;
+  text-align: left;
+
+  th {
+    color: $alt-text-color;
+  }
+
+  tr {
+    line-height: 1.8rem;
+  }
+
+  td {
+    padding-top: 5px;
+  }
+
+  @include for-tablet-portrait-up {
+    font-size: 1rem;
+  };
+}
+
+li {
+  margin-bottom: 1rem;
+}

@@ -32,14 +32,6 @@
       "rating" : 2816,
       "won" : 1
     },
-    "-KS-rVpX_onSLHxhkHPw" : {
-      "lost" : 1,
-      "name" : "Vladimir Kramnik",
-      "nationality" : "Russian",
-      "played" : 2,
-      "rating" : 2812,
-      "won" : 1
-    },
     "-KS-ra-2em7fO5xQ104a" : {
       "lost" : 2,
       "name" : "Bobby Fischer",
@@ -47,6 +39,14 @@
       "played" : 2,
       "rating" : 2785,
       "won" : 0
+    },
+    "-KS-rVpX_onSLHxhkHPw" : {
+      "lost" : 1,
+      "name" : "Mariya Muzychuk",
+      "nationality" : "Ukrainian",
+      "played" : 2,
+      "rating" : 2563,
+      "won" : 1
     }
   },
   "results" : [ {
@@ -58,16 +58,16 @@
     "loser" : "Magnus Carlsen",
     "winner" : "Viswanathan Anand"
   }, {
-    "date" : "Sun Sep 11 2016",
+    "date" : "Sat Sep 10 2016",
     "loser" : "Garry Kasparov",
     "winner" : "Veselin Topalov"
   }, {
-    "date" : "Sun Sep 11 2016",
-    "loser" : "Vladimir Kramnik",
+    "date" : "Sat Sep 10 2016",
+    "loser" : "Mariya Muzychuk",
     "winner" : "Garry Kasparov"
   }, {
     "date" : "Mon Sep 12 2016",
     "loser" : "Bobby Fischer",
-    "winner" : "Vladimir Kramnik"
+    "winner" : "Mariya Muzychuk"
   } ]
 }

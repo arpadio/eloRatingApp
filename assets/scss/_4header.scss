@@ -1,0 +1,26 @@
+// main: ../main.scss
+
+header {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+
+  a {
+    color: $brand-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $brand-color;
+      text-decoration: underline;
+    }
+  }
+
+  h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 1.4rem;
+
+    @include for-tablet-portrait-up {
+      font-size: 1.6rem;
+    };
+  }
+}

@@ -1,0 +1,47 @@
+// =============================================
+//
+//  Variables and imports only!
+//
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+// Typography
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+$base-font-size:        16px;
+$base-font-family:      'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-font-weight:      400;
+$base-line-height:      1.6rem;
+
+$headings-font-family:  $base-font-family;
+$headings-font-weight:  700;
+
+// =============================================
+// Layout
+
+$column-width:          800px;     // Column width
+$paragraph-width:       37em;      // Should give ~80 cpl.
+$spacing-unit:          2rem;
+$border:                1px solid #000;
+
+// =============================================
+// Colours
+$brand-color:           #33beff;     // Electron.js +20%
+$text-color:            #fff3df;
+$alt-text-color:        #9feaf9;
+$link-color:            $alt-text-color;
+
+$background-color:      #1a1b23;
+$card-bg-color:         #2c2e3b;
+$emphasis-bg:           #303439;
+
+$warning-color:         #ff6e6e;
+$success-color:         #7fc794;
+
+
+@import
+  "./scss/_0breakpoints",
+  "./scss/_1base",
+  "./scss/_2utilities",
+  "./scss/_3layout",
+  "./scss/_4header",
+  "./scss/_5footer";

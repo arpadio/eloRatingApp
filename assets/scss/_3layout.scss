@@ -1,0 +1,58 @@
+// main: ../main.scss
+
+// There are three views – these two are hidden by default
+#newResultView,
+#newPlayerView {
+  display: none;
+}
+
+.ranking-table {
+  // Hide nationality and win / loss on mobile
+  th:nth-child(n+3):nth-child(-n+5),
+  td:nth-child(n+3):nth-child(-n+5) {
+    display: none;
+  }
+
+  th:nth-child(n+4),
+  td:nth-child(n+4) {
+    text-align: right;
+  }
+
+  @include for-tablet-portrait-up {
+    th:nth-child(n+3):nth-child(-n+5),
+    td:nth-child(n+3):nth-child(-n+5) {
+      display: table-cell;
+    }
+  };
+}
+
+.results-history {
+  align-items: baseline;
+  justify-content: flex-start;
+
+  h2 {
+    padding-right: 1rem;
+  }
+}
+
+#resultsList {
+  .flexbox {
+    margin-bottom: 1rem;
+  }
+
+  .flex-child {
+    flex: 0 0 100%;
+  }
+
+  .result-date {
+    @include for-tablet-portrait-up {
+      flex: 0 0 25%;
+    };
+  }
+
+  .result-result {
+    @include for-tablet-portrait-up {
+      flex: 1 1 auto;
+    };
+  }
+}

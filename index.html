@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="The complete ranking of table tennis players in Scarborough, WA">
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,700,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="./css/main.min.css">
+    <meta name="description" content="The Elo chess ranking algorithm in Javascript form">
+    <link rel="stylesheet" href="./assets/main.min.css">
 
     <title>Arpadio - The Elo Rating App</title>
 
@@ -16,29 +15,37 @@
   <body>
 
     <header>
-      <div class="wrapper">
-        <div class="row space-between">
-          <a href="./"><h1>Arpadio</h1></a>
-          <button class="btn" id="resetButton">Reset</button>
+      <div class="container">
+        <div class="flexbox">
+          <div class="brand">
+            <h1><a href="./">Arpadio</a></h1>
+          </div>
+          <div>
+            <button class="btn small-btn" id="resetButton">Reset</button>
+          </div>
         </div>
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
+    <main>
 
-        <div id="rankingView">
-          <div class="row space-between" />
-            <h2>Current Ranking</h2>
-            <div>
-              <button class="btn newPlayerButton">Add Player</button>
-              <button class="btn btn-success" id="newResultButton">New Result</button>
+      <div class="container">
+
+        <section id="rankingView">
+          <div class="view-header">
+            <div class="flex-half">
+              <h2>Current Ranking</h2>
+            </div>
+            <div class="flex-half">
+              <button class="btn newPlayerButton">Add new player</button>
+              <button class="btn spaced-btn" id="newResultButton">Add new result</button>
             </div>
           </div>
-          <table id="rankingTable">
+
+          <table class="card ranking-table">
             <thead>
               <tr>
-                <th>Ranking</th>
+                <th>Rank</th>
                 <th>Name</th>
                 <th>Nationality</th>
                 <th>Won</th>
@@ -47,114 +54,117 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Ranking will magically appear here! -->
+              <!-- Populated by app.js -->
             </tbody>
           </table>
 
-          <div class="row space-between">
-            <h3>Results</h3>
-            <p id="totalGames"></p>
+
+
+        </section>
+
+        <section id="newPlayerView">
+
+          <div class="view-header" />
+            <h2>Add a New Player</h2>
+            <button class="btn cancel-btn spaced-btn">Cancel</button>
           </div>
-          <table id="resultsHistory">
-            <tbody>
-              <!-- Ranking will magically appear here! -->
-            </tbody>
-          </table>
 
-        </div>
+          <div class="card">
 
-        <div id="newResultView">
-          <div class="row space-between" />
+            <div class="input-group">
+              <label for="npName">First name:</label>
+              <input type="text" id="npFirst" />
+              <span class="form-error" id="firstError">Please enter the new player's name</span>
+            </div>
+
+            <div class="input-group">
+              <label for="npName">Last name:</label>
+              <input type="text" id="npLast" />
+              <span class="form-error" id="lastError">Please enter the new player's name</span>
+            </div>
+
+            <div class="input-group">
+              <label for="npNationality">Nationality:</label>
+              <input type="text" id="npNationality"/>
+              <span class="form-error" id="nationalityError">Please enter the new player's nationality</span>
+            </div>
+
+            <button class="btn submit-btn" id="addPlayer">Add new player</button>
+
+          </div>
+
+        </section> <!-- New player view -->
+
+        <section id="newResultView">
+
+          <div class="view-header" />
             <h2>Submit a New Result</h2>
             <div>
-              <button class="btn newPlayerButton">Add Player</button>
-              <button class="btn btn-error cancelButton">Cancel</button>
+              <button class="btn newPlayerButton">Add new player</button>
+              <button class="btn cancel-btn spaced-btn">Cancel</button>
             </div>
           </div>
 
-          <hr />
+          <div class="card" id="selects">
 
-          <h3>Who played who?</h3>
-
-          <div class="row" id="selects">
-            <div class="column text-center">
-              <p>The humble winner:</p>
-              <select class="resultSelect" id="playerOne">
+            <div class="input-group">
+              <label for="resultWinner">The humble winner:</label>
+              <select class="resultSelect" id="playerOne" name="resultWinner">
                 <option value="none"></option>
-                <!-- PLayers will magically appear here! -->
+                <!-- app.js will populate -->
               </select>
+              <span class="form-error" id="winnerError">Please select the winner</span>
             </div>
-            <div class="column text-center">
-              <p><strong>Beat</strong></p>
-            </div>
-            <div class="column text-center">
-              <p>The gallant loser:</p>
+
+            <div class="input-group">
+              <label for="resultWinner">The gallant loser:</label>
               <select class="resultSelect" id="playerTwo">
                 <option value="none"></option>
-                <!-- Players will magically appear here! -->
+                <!-- app.js will populate -->
               </select>
+              <span class="form-error" id="loserError">Please select the loser</span>
             </div>
+
+            <button id="submitResult" class="btn submit-btn">Publish result</button>
+
           </div>
 
-          <div class="double-margins text-center">
-            <button id="submitResult" class="btn btn-success">Publish Result</button>
+        </section> <!-- New result view -->
+
+        <section>
+          <div class="view-header results-history">
+            <h2>Recent Results</h2>
+            <p id="totalGames"></p>
           </div>
 
-        </div>
+          <div class="card" id="resultsList">
 
-        <div id="newPlayerView">
-          <div class="row space-between" />
-            <h2>Add a New Player</h2>
-            <button class="btn btn-error cancelButton">Cancel</button>
           </div>
-          <hr />
-          <h3>Who would you like to add?</h3>
-
-          <div class="row flex-start inputRow">
-            <div class="column">
-              <label for="npName">Name:</label>
-            </div>
-            <div class="column">
-              <input type="text" id="npName" />
-            </div>
-          </div>
-
-          <div class="row flex-start inputRow">
-            <div class="column">
-              <label for="npNationality">Nationality:</label>
-            </div>
-            <div class="column">
-              <input type="text" id="npNationality"/>
-            </div>
-          </div>
-
-          <div class="row flex-start inputRow">
-            <div class="column">
-            </div>
-            <div class="column">
-              <button class="btn btn-success" id="addPlayer">Add Player</button>
-            </div>
-          </div>
-
-        </div>
+        </section>
 
       </div>
-    </section>
+
+    </main>
 
     <footer>
-      <div class="wrapper">
-        <hr />
-        <p>By <a href="http://mead.fm" target="_blank">Sam Mead</a>, with thanks to <a href="https://metinmediamath.wordpress.com/" target="_blank">Metin Bektas</a></p>
-        <p><a href="https://github.com/arpadio/eloRatingApp" target="_blank">About Arpadio &mdash; The Elo Rating App</a></p>
-        <p>"The process of rating players can be compared to the measurement of the position of a cork bobbing up and down on the surface of agitated water with a yard stick tied to a rope and which is swaying in the wind."</p>
-        <p><em>&mdash; Arpad Elo</em></p>
+      <div class="container">
+        <div class="flexbox">
+          <div class="flex-half">
+            <p>"The process of rating players can be compared to the measurement of the position of a cork, bobbing up and down on the surface of agitated water, with a yard stick tied to a rope and which is swaying in the wind."</p>
+            <p><em>&mdash; Arpad Elo</em></p>
+          </div>
+          <div class="credits">
+            <p>By <a href="https://sjam.studio" target="_blank">Sam Mead</a>, with thanks to <a href="https://metinmediamath.wordpress.com/" target="_blank">Metin Bektas</a></p>
+            <p><a href="https://github.com/arpadio/eloRatingApp" target="_blank">About Arpadio &mdash; The Elo Rating App</a></p>
+          </div>
+        </div>
       </div>
     </footer>
 
   </body>
 
-  <script src="./scripts/jquery-2.2.4.min.js" ></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
   <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-  <script src="./scripts/app.js" ></script>
+  <script src="./assets/app.js" ></script>
 
 </html>

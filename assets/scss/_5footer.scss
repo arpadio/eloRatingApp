@@ -1,0 +1,22 @@
+// main: ../main.scss
+
+footer {
+  max-width: 100%;
+  padding: 70px 0;
+
+  .flexbox {
+    align-items: flex-start;
+  }
+
+  .flex-half {
+    @include for-tablet-portrait-up {
+      max-width: 43%;
+    };
+  }
+
+  p {
+    @include for-tablet-portrait-up {
+      max-width: 25rem;
+    };
+  }
+}

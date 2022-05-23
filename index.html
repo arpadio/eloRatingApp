@@ -74,19 +74,19 @@
             <div class="input-group">
               <label for="npName">First name:</label>
               <input type="text" id="npFirst" />
-              <span class="form-error">Please enter the new player's name</span>
+              <span class="form-error" id="firstError">Please enter the new player's name</span>
             </div>
 
             <div class="input-group">
               <label for="npName">Last name:</label>
               <input type="text" id="npLast" />
-              <span class="form-error">Please enter the new player's name</span>
+              <span class="form-error" id="lastError">Please enter the new player's name</span>
             </div>
 
             <div class="input-group">
               <label for="npNationality">Nationality:</label>
               <input type="text" id="npNationality"/>
-              <span class="form-error">Please enter the new player's nationality</span>
+              <span class="form-error" id="nationalityError">Please enter the new player's nationality</span>
             </div>
 
             <button class="btn submit-btn" id="addPlayer">Add new player</button>
@@ -113,7 +113,7 @@
                 <option value="none"></option>
                 <!-- app.js will populate -->
               </select>
-              <span class="form-error">Please select the winner</span>
+              <span class="form-error" id="winnerError">Please select the winner</span>
             </div>
 
             <div class="input-group">
@@ -122,7 +122,7 @@
                 <option value="none"></option>
                 <!-- app.js will populate -->
               </select>
-              <span class="form-error">Please select the loser</span>
+              <span class="form-error" id="loserError">Please select the loser</span>
             </div>
 
             <button id="submitResult" class="btn submit-btn">Publish result</button>
@@ -163,7 +163,7 @@
 
   </body>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
   <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
   <script src="./assets/app.js" ></script>
 

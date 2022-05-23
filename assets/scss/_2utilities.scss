@@ -46,9 +46,13 @@
 
 .card {
   background: $card-bg-color;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 5px;
   margin-bottom: $spacing-unit;
+
+  @include for-tablet-portrait-up {
+    padding: 1.5rem;
+  };
 }
 
 .input-group {

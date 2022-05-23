@@ -4,6 +4,11 @@ header {
   padding: 1rem 0;
   margin-bottom: 2rem;
 
+  .navbar {
+    @extend .flexbox;
+    justify-content: space-between;
+  }
+
   a {
     color: $brand-color;
     text-decoration: none;
